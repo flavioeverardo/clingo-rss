@@ -1,0 +1,5 @@
+clingo>=5.8,<6
+numpy>=2.0
+matplotlib>=3.9
+imageio>=2.37
+Pillow>=11

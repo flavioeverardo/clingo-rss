@@ -65,10 +65,13 @@ class ClingoApp(Application):
         group = "Clingo-rss Options"
         
         options.add(group, "approach", dedent("""\
-        Approach to compute and represent search space [simple-opt]
-              <arg>: {simple-opt|propagator-opt|another-one}
-                plain             : complete asp encodings approach
-                stratified        : stratified sampling using (unary) parity constraints
+        Approach to compute and represent search space [plain]
+              <arg>: {plain|grid-propagator|inc-edges|inc-squares|inc-single-edge}
+                plain             : single-shot encoding, ground/solve the whole grid at once
+                grid-propagator   : single-shot encoding plus a custom propagator (currently inert, see gridPropagator.py)
+                inc-edges         : multi-shot, grows the grid by BFS over edges, one solve per frontier
+                inc-squares       : multi-shot, grows the grid by nested sub-squares, one solve per square
+                inc-single-edge   : multi-shot, grows the grid one edge at a time, one solve per edge
         """),
         self.__parse_approach)
 

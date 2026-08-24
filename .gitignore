@@ -1,2 +1,11 @@
 .DS_Store
 *.pyc
+__pycache__/
+
+# Virtual environments
+.venv/
+venv/
+
+# Generated output (colors-test PNGs/GIFs)
+results/
+gifs/
